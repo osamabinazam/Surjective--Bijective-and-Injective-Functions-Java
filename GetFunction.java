@@ -41,6 +41,15 @@ public class GetFunction {
     }
 
     public boolean drBFunction(){
+
+        Scanner scan = new Scanner(System.in);
+        try{
+        int x = scan.nextInt();
+        }catch(drBException e ){
+            e = new drBException("[-] Error!\n (Domain & Co-Domain Should be integers only)");
+        }
+
+
         if(a_0==3&&a_1==0&&a_2==0&&a_0!=0)
             return true;
         else if(a_3==0&& a_1!=0&&a_2!=0&&a_0!=0)
@@ -64,7 +73,7 @@ public class GetFunction {
                 inputs[i]=scan.nextInt();
             }
         }catch(drBException e){
-            new drBException("Please provide correct value to co-efficients");
+            new drBException("[-] Error!\n (Coefficents Should be integers only)");
         }
 
 
