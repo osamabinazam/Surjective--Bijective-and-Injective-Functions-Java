@@ -5,7 +5,7 @@ public class GetFunction {
     private int a_0;
     private int a_1,a_2,a_3;
     private String equation= null;
-    
+
     GetFunction(){
         //
         a_0=0;
@@ -29,7 +29,8 @@ public class GetFunction {
         this.equation="-"+(a_0*-1)+"-"+(a_1*-1)+"x-"+(a_2*-1)+"x^2-"+(a_3*-1)+"x^3";
         else if (a_0==0 && a_1==0&&a_2==0&&a_3==0)
         this.equation=a_0+"+"+a_1+"x+"+a_2+"x^2+"+a_3+"x^3 = 0";
-
+        else 
+            System.out.println("Error!...");
 
     }
 
@@ -61,9 +62,10 @@ public class GetFunction {
     private boolean linearFunction(){
         if(a_3==0&&a_2==0&&a_1!=0&&a_0!=0){
             return true;
+
         }
         else 
-        return false;
+            return false;
     }
 
     //Quadratic Functions are always Surjective or it can be injective.
