@@ -70,7 +70,7 @@ public class getFunctionType {
             boolean_val3=false;
         }
         else if (linearFunction()){
-            boolean_val1=false;
+            boolean_val1=true;
             boolean_val2=false;
             boolean_val3=false;
         }
@@ -80,7 +80,7 @@ public class getFunctionType {
             boolean_val3=false;
         }
         else if (cubicFunction()){
-            boolean_val1=false;
+            boolean_val1=true;
             boolean_val2=false;
             boolean_val3=false;
 
@@ -88,7 +88,21 @@ public class getFunctionType {
         return getResult (x , a_0,a_1,a_2,a_3);
 
     }
+    public void display(){
+        int res = drBFunction();
+        System.out.println("\n***** General Equation *****");
+        System.out.printf("Equation : %dx^3%+dx^2%+dx%+d", a_3,a_2,a_1,a_0 );
+        System.out.println();
 
+
+        System.out.println("\n***** Function Detail *****\n");
+
+        System.out.println("Injective : "+ boolean_val1);
+        System.out.println("Surjective : "+ boolean_val2);
+        System.out.println("Bijective : "+ boolean_val3);
+
+        System.out.println("\nResult : " + res);
+    }
     private int getResult (int x , int a_0, int a_1, int a_2, int a_3){
         return a_0 + (a_1*x)+(a_2*(x*x))+(a_3*(x*x*x));
 
@@ -148,10 +162,8 @@ public class getFunctionType {
 
         getFunctionType gf = new getFunctionType();
         gf.setCoefficient(inputs[0],inputs[1],inputs[2],inputs[3]);
+        gf.display();
         
-        //Printing Equation
-        gf.getEquation();
-        System.out.println("\nResult : "+ gf.drBFunction());
     }
 
     
